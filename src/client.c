@@ -105,7 +105,7 @@ int main(int argc, const char* argv[]) {
     print_debug_ok(debug);
 
     print_debug("Sending volume...", debug);
-    uk_ac_cam_db538_VolumeNotification_notify(proxy, volume, muted, &error);
+    uk_ac_cam_db538_VolumeNotification_notify(proxy, volume, &error);
     if (error !=  NULL) {
         handle_error("Failed to send notification", error->message, FALSE);
         g_clear_error(&error);
